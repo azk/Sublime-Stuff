@@ -9,7 +9,7 @@ class UniquifyCommand(sublime_plugin.TextCommand):
 		self.view = view
 
 
-	def run(self,edit,syntax=None):
+	def run(self,edit):
 		line_regions = self.view.split_by_newlines(sublime.Region(0, self.view.size()))
 		
 		uniqs = set([self.view.substr(r) for r in line_regions])
